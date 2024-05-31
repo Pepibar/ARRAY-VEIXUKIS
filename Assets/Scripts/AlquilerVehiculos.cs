@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class AlquilerVehiculos : MonoBehaviour
 {
-    public Vehiculo[] vehiculos;
+    public GameObject[] vehiculos;
 
     // Start is called before the first frame update
     void Start()
     {
         ResetearVehiculos();
+        vehiculos[0].SetActive(true);
     }
 
     // Update is called once per frame
@@ -23,6 +24,9 @@ public class AlquilerVehiculos : MonoBehaviour
 
     void ResetearVehiculos()
     {
-
+        for (int i = 0; i < vehiculos.Length; i++)
+        {
+            vehiculos[i].SetActive(false);
+        }
     }
 }
